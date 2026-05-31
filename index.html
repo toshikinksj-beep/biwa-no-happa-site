@@ -116,6 +116,7 @@ header.scrolled{box-shadow:0 4px 20px rgba(150,120,80,.10)}
 .hero h1 span{color:var(--green-deep);position:relative}
 .hero h1 span::after{content:"";position:absolute;left:0;right:0;bottom:.05em;height:.35em;background:rgba(155,183,153,.3);z-index:-1;border-radius:4px}
 .hero .sub{font-size:1.05rem;color:var(--text-soft);max-width:640px;margin:0 auto 14px}
+.sp-br{display:none}
 .hero .pts{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:28px 0 36px}
 .hero .pts li{list-style:none;background:var(--white);border-radius:30px;padding:9px 18px;font-size:.9rem;font-weight:500;box-shadow:var(--shadow);color:var(--brown)}
 .hero .pts li::before{content:"🌿 ";}
@@ -307,13 +308,14 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
   .hero{
     min-height:calc(100svh - 60px - 66px);
     display:flex;align-items:center;
-    padding:14px 0 18px;
+    padding:34px 0 38px;
   }
   .hero .inner{width:100%}
-  .hero .badge{font-size:.68rem;padding:5px 12px;margin-bottom:12px;line-height:1.5;border-radius:20px;letter-spacing:0}
-  .hero h1{font-size:1.35rem;line-height:1.55;margin-bottom:12px;letter-spacing:0}
-  .hero .sub{font-size:.88rem;line-height:1.7;margin-bottom:4px;text-align:center;padding:0 4px}
-  .hero .pts{gap:6px;margin:14px 0 18px}
+  .sp-br{display:inline}
+  .hero .badge{font-size:.68rem;padding:5px 12px;margin-bottom:16px;line-height:1.5;border-radius:20px;letter-spacing:0}
+  .hero h1{font-size:1.35rem;line-height:1.55;margin-bottom:14px;letter-spacing:0}
+  .hero .sub{font-size:.88rem;line-height:1.85;margin-bottom:4px;text-align:center;padding:0 4px}
+  .hero .pts{gap:6px;margin:18px 0 22px}
   .hero .pts li{font-size:.75rem;padding:6px 10px}
 
   /* CTA buttons : full width, big tap targets */
@@ -400,8 +402,8 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
 
 /* ---------- responsive : 縦が短い端末（iPhone SE等）---------- */
 @media(max-width:560px) and (max-height:720px){
-  .hero{padding:10px 0 14px}
-  .hero .badge{margin-bottom:10px}
+  .hero{padding:18px 0 20px}
+  .hero .badge{margin-bottom:12px}
   .hero h1{font-size:1.28rem;margin-bottom:10px}
   .hero .sub{font-size:.84rem;line-height:1.65}
   .hero .pts{gap:5px;margin:11px 0 14px}
@@ -480,7 +482,7 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
   <div class="wrap inner">
     <span class="badge">完全予約制／駐車場あり／御殿場市新橋</span>
     <h1>その不調、<span>「冷え」</span>が<br>かくれているのかもしれません。</h1>
-    <p class="sub">肩こり・腰痛・冷え・婦人科のお悩みから美容鍼まで。<br>お一人おひとりに向き合い、心と体がほっと楽になる施術を。</p>
+    <p class="sub">肩こり・腰痛・冷え・婦人科のお悩みから美容鍼まで。<br>お一人おひとりに向き合い、<br class="sp-br">心と体がほっと楽になる施術を。</p>
     <ul class="pts">
       <li>鍼が初めてでも安心</li>
       <li>赤ちゃん〜お年寄りまで</li>
