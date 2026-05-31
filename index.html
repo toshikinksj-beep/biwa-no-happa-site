@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>はり灸院 びわの葉っぱ｜御殿場市の鍼灸・整体｜肩こり・腰痛・冷え・不妊・美容鍼</title>
+<title>はり灸院 びわの葉っぱ｜御殿場市の鍼灸（はり・きゅう）｜肩こり・腰痛・冷え・不妊・美容鍼</title>
 <meta name="description" content="御殿場市の「はり灸院 びわの葉っぱ」。肩こり・腰痛・冷え・婦人科のお悩み・美容鍼まで。鍼が初めての方も安心の完全予約制。お電話・公式LINEでご予約いただけます。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -262,21 +262,21 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
 /* ---------- fixed mobile cta ---------- */
 .fixed-cta{
   display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;
-  background:rgba(255,255,255,.96);backdrop-filter:blur(8px);
+  background:rgba(255,255,255,.97);backdrop-filter:blur(10px);
   box-shadow:0 -4px 20px rgba(150,120,80,.18);
-  padding:8px;gap:8px;
+  padding:8px 10px calc(8px + env(safe-area-inset-bottom));gap:10px;
 }
-.fixed-cta a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:11px;border-radius:14px;color:#fff;font-weight:700;font-size:.95rem}
+.fixed-cta a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:54px;padding:8px;border-radius:14px;color:#fff;font-weight:700;font-size:1rem;line-height:1.2}
 .fixed-cta .f-tel{background:linear-gradient(135deg,#eaa257,#e0852f)}
 .fixed-cta .f-line{background:linear-gradient(135deg,#13d066,#05b54e)}
-.fixed-cta small{font-size:.68rem;font-weight:500;opacity:.95}
+.fixed-cta small{font-size:.66rem;font-weight:500;opacity:.95;margin-top:2px}
 
-/* ---------- responsive ---------- */
+/* ---------- responsive : tablet ---------- */
 @media(max-width:860px){
   .hnav{display:none}
   .h-cta{display:none}
   .menu-toggle{display:block}
-  .reason-grid{grid-template-columns:1fr;gap:36px}
+  .reason-grid{grid-template-columns:1fr;gap:42px}
   .treat-grid,.first-grid,.voice-grid,.worry-grid{grid-template-columns:1fr}
   .dir{grid-template-columns:1fr;text-align:center;padding:30px}
   .dir .photo{max-width:260px;margin:0 auto}
@@ -284,15 +284,120 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
   .access-grid{grid-template-columns:1fr}
   .yojo ol{grid-template-columns:1fr}
   .fixed-cta{display:flex}
+  body{padding-bottom:78px}   /* 固定CTA分の余白 */
 }
-@media(max-width:520px){
-  body{font-size:16px}
-  section{padding:54px 0}
-  .hero h1{font-size:1.7rem}
-  .sec-head h2{font-size:1.4rem}
-  .btn-tel,.btn-line{min-width:100%}
-  .hero{padding:60px 0 70px}
-  .dir{padding:24px}
+
+/* ---------- responsive : smartphone ---------- */
+@media(max-width:560px){
+  body{font-size:16px;line-height:1.85}
+  .wrap{padding:0 18px}
+  section{padding:46px 0}
+  .sec-head{margin-bottom:30px}
+  .sec-head h2{font-size:1.34rem;padding-bottom:14px;line-height:1.5}
+  .sec-head h2::after{width:44px;height:3px}
+  .sec-head .lead{font-size:.92rem;margin-top:12px;text-align:left;padding:0 2px}
+
+  /* header */
+  .hbar{height:60px}
+  .logo .mark{width:34px;height:34px;font-size:1.05rem}
+  .logo b{font-size:1.02rem}
+  .logo small{font-size:.62rem}
+
+  /* hero */
+  .hero{padding:46px 0 56px}
+  .hero .badge{font-size:.72rem;padding:6px 14px;margin-bottom:18px;line-height:1.5;border-radius:20px}
+  .hero h1{font-size:1.6rem;line-height:1.55;margin-bottom:16px}
+  .hero .sub{font-size:.95rem;line-height:1.8;margin-bottom:6px;text-align:center;padding:0 4px}
+  .hero .pts{gap:7px;margin:20px 0 26px}
+  .hero .pts li{font-size:.8rem;padding:7px 12px}
+
+  /* CTA buttons : full width, big tap targets */
+  .cta-row{flex-direction:column;gap:12px;align-items:stretch}
+  .btn-tel,.btn-line{min-width:0;width:100%;padding:15px 18px;border-radius:15px}
+  .btn-tel .big{font-size:1.35rem}
+  .btn-line .big{font-size:1.12rem}
+  .btn-tel .lbl,.btn-line .lbl{font-size:.74rem}
+  .cta-note{font-size:.78rem;margin-top:14px;padding:0 6px}
+
+  /* worries */
+  .worry-grid{gap:12px}
+  .worry{padding:18px 18px;border-radius:16px;gap:12px}
+  .worry p{font-size:.95rem;line-height:1.7}
+  .worry .ic{font-size:1.35rem}
+  .worry-after{margin-top:30px}
+  .worry-after p{font-size:1.05rem;padding:0 10px;line-height:1.6}
+
+  /* reasons */
+  .reason{padding:34px 22px 26px;border-radius:18px}
+  .reason .num{width:44px;height:44px;font-size:1.15rem;top:-16px}
+  .reason .ic{font-size:2.3rem}
+  .reason h3{font-size:1.1rem;line-height:1.5}
+  .reason p{font-size:.92rem;text-align:left}
+
+  /* treatments */
+  .treat-grid{gap:18px}
+  .treat .ph{height:180px;font-size:2.6rem}
+  .treat .body{padding:22px 22px}
+  .treat h3{font-size:1.2rem}
+  .treat p{font-size:.92rem}
+
+  /* first time */
+  .first-grid{gap:14px;margin-bottom:28px}
+  .fcard{padding:22px 22px;border-radius:18px}
+  .fcard h3{font-size:1.08rem}
+  .fcard p{font-size:.92rem}
+  .yojo{padding:26px 22px}
+  .yojo h3{font-size:1.1rem;margin-bottom:16px;line-height:1.5}
+  .yojo ol{gap:11px}
+  .yojo li{font-size:.92rem;padding-left:36px}
+
+  /* pricing */
+  .price-note .first{font-size:.92rem;padding:9px 18px;line-height:1.5;display:inline-block}
+  .price-block h3{font-size:1rem;padding:13px 18px}
+  .price-block td{padding:13px 16px;font-size:.92rem}
+  .price-block td.amt{font-size:.95rem}
+  .pay{padding:20px 20px;font-size:.88rem}
+  .pay ul{padding-left:1.1em}
+
+  /* voices */
+  .voice-grid{gap:14px}
+  .voice{padding:24px 22px 22px;border-radius:18px}
+  .voice p{font-size:.92rem;margin:10px 0 12px}
+  .voice .who{font-size:.82rem}
+  .disclaimer{font-size:.75rem;text-align:left;padding:0 4px}
+
+  /* director */
+  .dir{padding:26px 22px;gap:22px}
+  .dir .photo{max-width:200px}
+  .dir .name{font-size:1.3rem}
+  .dir blockquote{font-size:.93rem;text-align:left}
+  .dir .feat{gap:7px}
+  .dir .feat li{font-size:.76rem;padding:5px 12px}
+
+  /* access */
+  .clinic-photo{margin-bottom:20px}
+  .hours th,.hours td{padding:8px 4px;font-size:.82rem}
+  .hours td.time{font-size:.72rem;line-height:1.35}
+  .info-table th,.info-table td{padding:13px 14px;font-size:.92rem}
+  .info-table th{width:30%}
+  .map-embed{height:240px}
+
+  /* final */
+  .final h2{font-size:1.45rem;line-height:1.55}
+  .final p{font-size:.95rem;margin-bottom:26px;padding:0 6px}
+
+  /* footer */
+  footer{padding:36px 0 96px}
+  footer .ft{gap:18px}
+  footer b{font-size:1.05rem}
+  footer p{font-size:.85rem}
+}
+
+/* ---------- responsive : very small ---------- */
+@media(max-width:360px){
+  .hero h1{font-size:1.42rem}
+  .btn-tel .big{font-size:1.25rem}
+  .sec-head h2{font-size:1.22rem}
 }
 
 /* mobile drawer */
@@ -314,7 +419,7 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
       <span class="mark">🌿</span>
       <span>
         <b>びわの葉っぱ</b>
-        <small>御殿場市のはり灸院・整体</small>
+        <small>御殿場市のはり灸院</small>
       </span>
     </a>
     <nav class="hnav">
