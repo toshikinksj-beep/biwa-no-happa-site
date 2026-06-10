@@ -89,38 +89,68 @@ header.scrolled{box-shadow:0 4px 20px rgba(150,120,80,.10)}
 /* ---------- hero ---------- */
 .hero{
   position:relative;overflow:hidden;
-  padding:90px 0 100px;text-align:center;
+  padding:130px 0 140px;text-align:center;
 }
 .hero::before{
   content:"";position:absolute;inset:0;z-index:-2;
   background:
-    linear-gradient(rgba(253,249,239,.72),rgba(253,249,239,.86)),
+    linear-gradient(rgba(253,249,239,.82),rgba(253,249,239,.90)),
     url('images/treatment.jpg') center/cover no-repeat;
-  transform:scale(1.08);animation:slowZoom 18s ease-in-out infinite alternate;
+  transform:scale(1.08);animation:slowZoom 22s ease-in-out infinite alternate;
 }
 .hero::after{
-  content:"";position:absolute;z-index:-1;width:480px;height:480px;border-radius:50%;
-  background:radial-gradient(circle,rgba(155,183,153,.28),transparent 70%);
-  top:-160px;right:-120px;
+  content:"";position:absolute;z-index:-1;width:560px;height:560px;border-radius:50%;
+  background:radial-gradient(circle,rgba(155,183,153,.22),transparent 70%);
+  top:-200px;right:-160px;
 }
-@keyframes slowZoom{from{transform:scale(1.04)}to{transform:scale(1.14)}}
-.hero .inner>*{opacity:0;transform:translateY(24px);animation:heroUp .9s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes slowZoom{from{transform:scale(1.04)}to{transform:scale(1.13)}}
+.hero .inner>*{opacity:0;transform:translateY(26px);animation:heroUp 1.1s cubic-bezier(.2,.7,.2,1) forwards}
 .hero .badge{animation-delay:.1s}
-.hero h1{animation-delay:.25s}
-.hero .sub{animation-delay:.4s}
-.hero .pts{animation-delay:.55s}
-.hero .cta-row{animation-delay:.7s}
-.hero .cta-note{animation-delay:.85s}
+.hero .hero-sub-copy{animation-delay:.3s}
+.hero h1{animation-delay:.5s}
+.hero .sub{animation-delay:.7s}
+.hero .sub-detail{animation-delay:.85s}
+.hero .cta-row{animation-delay:1s}
+.hero .cta-note{animation-delay:1.15s}
 @keyframes heroUp{to{opacity:1;transform:none}}
-.hero .badge{display:inline-block;background:var(--white);color:var(--green-deep);border:1px solid var(--green-light);padding:8px 20px;border-radius:30px;font-size:.85rem;font-weight:700;margin-bottom:24px;box-shadow:var(--shadow)}
-.hero h1{font-family:"Noto Serif JP",serif;font-size:2.3rem;line-height:1.6;color:var(--brown);font-weight:600;margin-bottom:22px}
-.hero h1 span{color:var(--green-deep);position:relative}
-.hero h1 span::after{content:"";position:absolute;left:0;right:0;bottom:.05em;height:.35em;background:rgba(155,183,153,.3);z-index:-1;border-radius:4px}
-.hero .sub{font-size:1.05rem;color:var(--text-soft);max-width:640px;margin:0 auto 14px}
+
+.hero .badge{display:inline-block;background:rgba(255,255,255,.7);color:var(--green-deep);border:1px solid var(--green-light);padding:7px 22px;border-radius:30px;font-size:.8rem;font-weight:500;letter-spacing:.14em;margin-bottom:38px;backdrop-filter:blur(4px)}
+
+/* サブコピー（生命の熱力学…） */
+.hero .hero-sub-copy{
+  font-family:"Noto Serif JP",serif;
+  font-size:.95rem;color:var(--green-deep);
+  letter-spacing:.22em;font-weight:500;
+  margin-bottom:30px;position:relative;display:inline-block;
+}
+.hero .hero-sub-copy::before,
+.hero .hero-sub-copy::after{
+  content:"";position:absolute;top:50%;width:30px;height:1px;background:var(--green);opacity:.5;
+}
+.hero .hero-sub-copy::before{left:-46px}
+.hero .hero-sub-copy::after{right:-46px}
+
+/* メインコピー */
+.hero h1{
+  font-family:"Noto Serif JP",serif;
+  font-size:3.2rem;line-height:1.55;color:var(--brown);
+  font-weight:600;margin-bottom:44px;letter-spacing:.06em;
+}
+
+/* 説明文・1行目（リード） */
+.hero .sub{
+  font-size:1.02rem;color:var(--text-soft);
+  max-width:680px;margin:0 auto 30px;
+  letter-spacing:.04em;
+}
+/* 説明文・本文 */
+.hero .sub-detail{
+  font-size:1rem;color:var(--text-soft);
+  max-width:680px;margin:0 auto 22px;
+  line-height:2.1;letter-spacing:.04em;
+}
+.hero .sub-detail:last-of-type{margin-bottom:46px}
 .sp-br{display:none}
-.hero .pts{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:28px 0 36px}
-.hero .pts li{list-style:none;background:var(--white);border-radius:30px;padding:9px 18px;font-size:.9rem;font-weight:500;box-shadow:var(--shadow);color:var(--brown)}
-.hero .pts li::before{content:"🌿 ";}
 
 /* ---------- cta buttons ---------- */
 .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
@@ -304,19 +334,19 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
   .logo b{font-size:1.02rem}
   .logo small{font-size:.62rem}
 
-  /* hero : 1画面に収める（固定CTA 66px分を差し引く） */
-  .hero{
-    min-height:calc(100svh - 60px - 66px);
-    display:flex;align-items:center;
-    padding:34px 0 38px;
-  }
+  /* hero : 余白ゆったり・上品に */
+  .hero{padding:66px 0 76px}
   .hero .inner{width:100%}
   .sp-br{display:inline}
-  .hero .badge{font-size:.68rem;padding:5px 12px;margin-bottom:16px;line-height:1.5;border-radius:20px;letter-spacing:0}
-  .hero h1{font-size:1.35rem;line-height:1.55;margin-bottom:14px;letter-spacing:0}
-  .hero .sub{font-size:.88rem;line-height:1.85;margin-bottom:4px;text-align:center;padding:0 4px}
-  .hero .pts{gap:6px;margin:18px 0 22px}
-  .hero .pts li{font-size:.75rem;padding:6px 10px}
+  .hero .badge{font-size:.7rem;padding:6px 16px;margin-bottom:26px;line-height:1.5;border-radius:20px;letter-spacing:.1em}
+  .hero .hero-sub-copy{font-size:.8rem;letter-spacing:.16em;margin-bottom:22px}
+  .hero .hero-sub-copy::before{left:-30px;width:20px}
+  .hero .hero-sub-copy::after{right:-30px;width:20px}
+  .hero h1{font-size:2rem;line-height:1.55;margin-bottom:32px;letter-spacing:.05em}
+  .hero .sub{font-size:.95rem;line-height:1.8;margin-bottom:24px;padding:0 4px}
+  .hero .sub-detail{font-size:.9rem;line-height:2;margin-bottom:20px;padding:0 6px}
+  .hero .sub-detail br{display:none}
+  .hero .sub-detail:last-of-type{margin-bottom:36px}
 
   /* CTA buttons : full width, big tap targets */
   .cta-row{flex-direction:column;gap:10px;align-items:stretch}
@@ -400,24 +430,10 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
   footer p{font-size:.85rem}
 }
 
-/* ---------- responsive : 縦が短い端末（iPhone SE等）---------- */
-@media(max-width:560px) and (max-height:720px){
-  .hero{padding:18px 0 20px}
-  .hero .badge{margin-bottom:12px}
-  .hero h1{font-size:1.28rem;margin-bottom:10px}
-  .hero .sub{font-size:.84rem;line-height:1.65}
-  .hero .pts{gap:5px;margin:11px 0 14px}
-  .hero .pts li{font-size:.72rem;padding:5px 9px}
-  .cta-row{gap:9px}
-  .btn-tel,.btn-line{padding:11px 16px}
-  .btn-tel .big{font-size:1.22rem}
-  .btn-line .big{font-size:1.04rem}
-  .hero .cta-note{display:none}
-}
-
 /* ---------- responsive : very small ---------- */
 @media(max-width:360px){
-  .hero h1{font-size:1.24rem}
+  .hero h1{font-size:1.78rem}
+  .hero .hero-sub-copy{font-size:.74rem;letter-spacing:.12em}
   .btn-tel .big{font-size:1.18rem}
   .sec-head h2{font-size:1.22rem}
 }
@@ -479,15 +495,21 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
 <!-- ===== 1. HERO ===== -->
 <section class="hero" id="top">
   <div class="wrap inner">
-    <span class="badge">完全予約制／駐車場あり／御殿場市新橋</span>
-    <h1>その不調、<span>「冷え」</span>が<br>かくれているのかもしれません。</h1>
-    <p class="sub">肩こり・腰痛・冷え・婦人科のお悩みから美容鍼まで。<br>お一人おひとりに向き合い、<br class="sp-br">心と体がほっと楽になる施術を。</p>
-    <ul class="pts">
-      <li>鍼が初めてでも安心</li>
-      <li>赤ちゃん〜お年寄りまで</li>
-      <li>使い捨ての鍼で衛生的</li>
-      <li>女性院長が担当</li>
-    </ul>
+    <span class="badge">御殿場市新橋・完全予約制</span>
+    <p class="hero-sub-copy">生命の熱力学に基づく神経系へのアプローチ</p>
+    <h1>皮膚から、<br class="sp-br">生命を整える。</h1>
+    <p class="sub">
+      肩こり・腰痛・婦人科のお悩みから美容鍼まで。
+    </p>
+    <p class="sub-detail">
+      私たちは症状だけを追うのではなく、<br>
+      皮膚・神経系・身体全体のつながりに着目し、<br>
+      本来備わっている回復する力が働きやすい状態へ導きます。
+    </p>
+    <p class="sub-detail">
+      お一人おひとりの身体と丁寧に向き合い、<br>
+      心と身体が自然と軽くなる施術を提供しています。
+    </p>
     <div class="cta-row">
       <a href="tel:09042616464" class="btn-tel">
         <span class="big">📞 090-4261-6464</span>
