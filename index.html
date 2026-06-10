@@ -51,6 +51,8 @@ section[id]{scroll-margin-top:72px}
 .sec-head h2{font-size:1.8rem;font-weight:700;color:var(--brown);line-height:1.5;position:relative;display:inline-block;padding-bottom:18px}
 .sec-head h2 span{color:var(--green-deep)}
 .sec-head h2::after{content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:54px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--green),var(--brown-light))}
+#worries .sec-head h2{padding-bottom:0}
+#worries .sec-head h2::after{display:none}
 .sec-head .lead{margin-top:16px;color:var(--text-soft);font-size:1rem}
 
 /* ---------- scroll reveal ---------- */
@@ -326,7 +328,7 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
   .sec-head{margin-bottom:30px}
   .sec-head h2{font-size:1.34rem;padding-bottom:14px;line-height:1.5}
   .sec-head h2::after{width:44px;height:3px}
-  .sec-head .lead{font-size:.92rem;margin-top:12px;text-align:left;padding:0 2px}
+  .sec-head .lead{font-size:.92rem;margin-top:12px;text-align:center;padding:0 2px}
 
   /* header */
   .hbar{height:60px}
@@ -334,19 +336,19 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
   .logo b{font-size:1.02rem}
   .logo small{font-size:.62rem}
 
-  /* hero : 余白ゆったり・上品に */
-  .hero{padding:66px 0 76px}
+  /* hero : 上に詰めてCTAを早く見せる */
+  .hero{padding:26px 0 40px}
   .hero .inner{width:100%}
   .sp-br{display:inline}
-  .hero .badge{font-size:.7rem;padding:6px 16px;margin-bottom:26px;line-height:1.5;border-radius:20px;letter-spacing:.1em}
-  .hero .hero-sub-copy{font-size:.8rem;letter-spacing:.16em;margin-bottom:22px}
-  .hero .hero-sub-copy::before{left:-30px;width:20px}
-  .hero .hero-sub-copy::after{right:-30px;width:20px}
-  .hero h1{font-size:2rem;line-height:1.55;margin-bottom:32px;letter-spacing:.05em}
-  .hero .sub{font-size:.95rem;line-height:1.8;margin-bottom:24px;padding:0 4px}
-  .hero .sub-detail{font-size:.9rem;line-height:2;margin-bottom:20px;padding:0 6px}
+  .hero .badge{font-size:.7rem;padding:6px 16px;margin-bottom:16px;line-height:1.5;border-radius:20px;letter-spacing:.1em}
+  .hero .hero-sub-copy{font-size:.78rem;letter-spacing:.14em;margin-bottom:14px}
+  .hero .hero-sub-copy::before{left:-26px;width:18px}
+  .hero .hero-sub-copy::after{right:-26px;width:18px}
+  .hero h1{font-size:1.9rem;line-height:1.5;margin-bottom:20px;letter-spacing:.05em}
+  .hero .sub{font-size:.92rem;line-height:1.75;margin-bottom:16px;padding:0 4px}
+  .hero .sub-detail{font-size:.86rem;line-height:1.9;margin-bottom:14px;padding:0 6px}
   .hero .sub-detail br{display:none}
-  .hero .sub-detail:last-of-type{margin-bottom:36px}
+  .hero .sub-detail:last-of-type{margin-bottom:24px}
 
   /* CTA buttons : full width, big tap targets */
   .cta-row{flex-direction:column;gap:10px;align-items:stretch}
@@ -362,7 +364,7 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
   .worry p{font-size:.95rem;line-height:1.7}
   .worry .ic{font-size:1.35rem}
   .worry-after{margin-top:30px}
-  .worry-after p{font-size:1.05rem;padding:0 10px;line-height:1.6}
+  .worry-after p{font-size:.95rem;padding:0 6px;line-height:1.6}
 
   /* reasons */
   .reason{padding:34px 22px 26px;border-radius:18px}
@@ -404,8 +406,8 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
   .disclaimer{font-size:.75rem;text-align:left;padding:0 4px}
 
   /* director */
-  .dir{padding:26px 22px;gap:22px}
-  .dir .photo{max-width:200px}
+  .dir{padding:30px 24px;gap:26px}
+  .dir .photo{max-width:300px}
   .dir .name{font-size:1.3rem}
   .dir blockquote{font-size:.93rem;text-align:left}
   .dir .feat{gap:7px}
@@ -422,6 +424,8 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
   /* final */
   .final h2{font-size:1.45rem;line-height:1.55}
   .final p{font-size:.95rem;margin-bottom:26px;padding:0 6px}
+  .final .final-lead{font-size:.84rem;line-height:1.9}
+  .pc-br{display:none}
 
   /* footer */
   footer{padding:36px 0 96px}
@@ -502,7 +506,7 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
       肩こり・腰痛・婦人科のお悩みから美容鍼まで。
     </p>
     <p class="sub-detail">
-      私たちは症状だけを追うのではなく、<br>
+      当院は症状だけを追うのではなく、<br>
       皮膚・神経系・身体全体のつながりに着目し、<br>
       本来備わっている回復する力が働きやすい状態へ導きます。
     </p>
@@ -529,7 +533,7 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>こんなお悩み、<span>ありませんか？</span></h2>
-      <p class="lead">どこへ行っても「異常なし」。それでも続くつらさに、寄り添います。</p>
+      <p class="lead">どこへ行っても「異常なし」。<br class="sp-br">それでも続くつらさに、寄り添います。</p>
     </div>
     <div class="worry-grid">
       <div class="worry reveal"><span class="ic">😣</span><p>慢性的な肩こり・腰痛が、なかなか良くならない</p></div>
@@ -580,7 +584,7 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>施術内容</h2>
-      <p class="lead">体の不調も、美容も。お悩みに合わせてご提案します。</p>
+      <p class="lead">体の不調も、美容も。<br class="sp-br">お悩みに合わせてご提案します。</p>
     </div>
     <div class="treat-grid">
       <div class="treat reveal">
@@ -645,7 +649,7 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
       </div>
     </div>
     <div class="yojo reveal">
-      <h3>施術当日の「養生（ようじょう）」のお願い</h3>
+      <h3>施術当日の<br class="sp-br">「養生（ようじょう）」のお願い</h3>
       <ol>
         <li>睡眠を十分にとりましょう</li>
         <li>施術直後の入浴は控えてください</li>
@@ -804,7 +808,7 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
       <div class="reveal d1">
         <div class="map-embed">
           <iframe
-            src="https://maps.google.com/maps?q=%E9%9D%99%E5%B2%A1%E7%9C%8C%E5%BE%A1%E6%AE%BF%E5%A0%B4%E5%B8%82%E6%96%B0%E6%A9%8B929-1&z=16&output=embed"
+            src="https://www.google.com/maps?q=%E9%9D%99%E5%B2%A1%E7%9C%8C%E5%BE%A1%E6%AE%BF%E5%A0%B4%E5%B8%82%E6%96%B0%E6%A9%8B929-1&hl=ja&z=17&output=embed"
             loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="はり灸院 びわの葉っぱ 地図" allowfullscreen></iframe>
         </div>
         <p class="access-note">静岡県御殿場市新橋929-1（駐車場あり）</p>
@@ -817,7 +821,7 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
 <section class="final">
   <div class="wrap">
     <h2>まずは、お気軽にご相談ください。</h2>
-    <p>「こんなことで相談していいのかな」も大歓迎です。<br>あなたのつらさに、ていねいに向き合います。</p>
+    <p class="final-lead">「こんなことで相談していいのかな」も大歓迎です。<br class="pc-br">あなたのつらさに、ていねいに向き合います。</p>
     <div class="cta-row">
       <a href="tel:09042616464" class="btn-tel">
         <span class="big">📞 090-4261-6464</span>
