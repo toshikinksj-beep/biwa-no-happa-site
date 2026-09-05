@@ -190,12 +190,18 @@ header.scrolled{box-shadow:0 4px 20px rgba(105,130,100,.12)}
   letter-spacing:.06em;
 }
 /* 当院について（ヒーロー下の紹介文） */
-.intro{padding:64px 0 10px;text-align:center}
+.intro{
+  padding:84px 0;text-align:center;
+  background:
+    linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.85)),
+    url('images/intro-leaves.jpg') center/cover no-repeat;
+}
 .intro p{
-  font-size:1rem;color:var(--text-soft);
+  font-size:1rem;color:var(--text);
   max-width:680px;margin:0 auto 26px;
   line-height:2.1;letter-spacing:.04em;
 }
+.intro p:last-child{margin-bottom:0}
 .sp-br{display:none}
 
 /* ---------- cta buttons ---------- */
@@ -398,7 +404,7 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
   .hero h1{font-size:2.3rem;line-height:1.5;margin-bottom:20px;letter-spacing:.05em}
   .hero .hero-name{font-size:1.28rem;gap:9px;margin-bottom:16px}
   .hero .sub{font-size:.9rem;line-height:1.9;margin-bottom:28px;padding:0 4px}
-  .intro{padding:44px 0 0}
+  .intro{padding:56px 0}
   .intro p{font-size:.9rem;line-height:2;margin-bottom:20px;padding:0 6px}
   .intro p br{display:none}
 
@@ -561,7 +567,7 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
     <h1>皮膚から、<br class="sp-br">生命を整える。</h1>
     <div class="hero-name"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>はり灸院 びわの葉っぱ</div>
     <p class="sub">
-      肩こり・腰痛・冷え・婦人科のお悩み・小児はり・美容鍼
+      肩こり・腰痛・冷え<span class="pc-br">・</span><br class="sp-br">婦人科のお悩み・小児はり・美容鍼
     </p>
     <div class="cta-row">
       <a href="tel:09042616464" class="btn-tel">
