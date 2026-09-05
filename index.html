@@ -10,12 +10,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --cream:#fdf9ef;
-  --cream-deep:#f3ecdb;
+  --cream:#fbfaf6;
+  --cream-deep:#f0ede3;
   --green:#9bb799;
   --green-light:#e0ead9;
   --green-soft:#f4f8ef;
   --green-deep:#6a8566;
+  --green-ink:#4c6350;
   --brown:#8a6a4f;
   --brown-light:#b8997b;
   --text:#4a4138;
@@ -42,6 +43,11 @@ body{
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 .serif{font-family:"Noto Serif JP",serif}
+.lc{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;display:inline-block;vertical-align:-.125em;flex-shrink:0}
+.ic .lc,.ic.lc{vertical-align:middle}
+.worry .ic{color:var(--green-deep);display:flex;align-items:center}
+.reason .ic{color:var(--green-deep)}
+.arrow .lc{stroke-width:2.5}
 
 /* ---------- layout ---------- */
 .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
@@ -66,7 +72,7 @@ section[id]{scroll-margin-top:72px}
 /* ---------- header ---------- */
 header{
   position:sticky;top:0;z-index:100;
-  background:rgba(253,249,239,.85);
+  background:rgba(255,255,255,.82);
   backdrop-filter:blur(12px);
   border-bottom:1px solid rgba(150,120,80,.08);
   transition:box-shadow .3s;
@@ -96,7 +102,7 @@ header.scrolled{box-shadow:0 4px 20px rgba(150,120,80,.10)}
 .hero::before{
   content:"";position:absolute;inset:0;z-index:-2;
   background:
-    linear-gradient(rgba(253,249,239,.82),rgba(253,249,239,.90)),
+    linear-gradient(rgba(255,255,255,.88),rgba(252,253,251,.95)),
     url('images/treatment.jpg') center/cover no-repeat;
   transform:scale(1.08);animation:slowZoom 22s ease-in-out infinite alternate;
 }
@@ -135,7 +141,7 @@ header.scrolled{box-shadow:0 4px 20px rgba(150,120,80,.10)}
 /* メインコピー */
 .hero h1{
   font-family:"Noto Serif JP",serif;
-  font-size:3.2rem;line-height:1.55;color:var(--brown);
+  font-size:3.2rem;line-height:1.55;color:var(--green-ink);
   font-weight:600;margin-bottom:44px;letter-spacing:.06em;
 }
 
@@ -272,7 +278,7 @@ header.scrolled{box-shadow:0 4px 20px rgba(150,120,80,.10)}
 .map-embed iframe{width:100%;height:100%;border:0}
 .access-note{font-size:.85rem;color:var(--text-soft);margin-top:12px}
 .line-news{display:flex;align-items:center;gap:10px;background:#eafaf0;border:1px solid #bfe8cd;border-radius:14px;padding:13px 18px;margin:14px 0 18px;font-size:.9rem;color:var(--text)}
-.line-news::before{content:"💬";font-size:1.2rem;flex-shrink:0}
+.line-news::before{content:"";width:20px;height:20px;flex-shrink:0;background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%2306a04a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>') center/contain no-repeat}
 .line-news a{color:#06a04a;font-weight:700;text-decoration:underline;text-underline-offset:3px}
 
 /* ---------- final cta ---------- */
@@ -480,17 +486,17 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
       <a href="#access">アクセス</a>
     </nav>
     <div class="h-cta">
-      <a href="tel:09042616464" class="btn-tel-mini">📞 090-4261-6464</a>
+      <a href="tel:09042616464" class="btn-tel-mini"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 090-4261-6464</a>
       <a href="https://lin.ee/TCalM2L" class="btn-line-mini">LINEで予約</a>
     </div>
-    <button class="menu-toggle" aria-label="メニュー">☰</button>
+    <button class="menu-toggle" aria-label="メニュー"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg></button>
   </div>
 </header>
 
 <!-- mobile drawer -->
 <div class="drawer" id="drawer">
   <div class="drawer-panel">
-    <div class="close" id="drawerClose">✕</div>
+    <div class="close" id="drawerClose"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></div>
     <a href="#worries">こんなお悩みありませんか</a>
     <a href="#reasons">選ばれる理由</a>
     <a href="#treatment">施術内容</a>
@@ -499,7 +505,7 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
     <a href="#voices">患者様の声</a>
     <a href="#director">院長紹介</a>
     <a href="#access">診療時間・アクセス</a>
-    <a href="tel:09042616464" class="btn-tel"><span class="big">📞 090-4261-6464</span><span class="lbl">電話で予約する</span></a>
+    <a href="tel:09042616464" class="btn-tel"><span class="big"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 090-4261-6464</span><span class="lbl">電話で予約する</span></a>
     <a href="https://lin.ee/TCalM2L" class="btn-line"><span class="big">LINEで相談・予約</span><span class="lbl">タップで友だち追加</span></a>
   </div>
 </div>
@@ -524,7 +530,7 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
     </p>
     <div class="cta-row">
       <a href="tel:09042616464" class="btn-tel">
-        <span class="big">📞 090-4261-6464</span>
+        <span class="big"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 090-4261-6464</span>
         <span class="lbl">タップで電話予約（受付時間内）</span>
       </a>
       <a href="https://lin.ee/TCalM2L" class="btn-line">
@@ -544,15 +550,15 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
       <p class="lead">どこへ行っても「異常なし」。<br class="sp-br">それでも続くつらさに、寄り添います。</p>
     </div>
     <div class="worry-grid">
-      <div class="worry reveal"><span class="ic">😣</span><p>慢性的な肩こり・腰痛が、なかなか良くならない</p></div>
-      <div class="worry reveal d1"><span class="ic">🥶</span><p>手足の冷えやむくみ、体調のゆらぎがつらい</p></div>
-      <div class="worry reveal"><span class="ic">🤰</span><p>生理痛・更年期・妊活など、女性特有のお悩み</p></div>
-      <div class="worry reveal d1"><span class="ic">😵‍💫</span><p>頭痛・めまい・不眠・自律神経の乱れが気になる</p></div>
-      <div class="worry reveal"><span class="ic">🏥</span><p>病院では「異常なし」と言われたが、不調が続く</p></div>
-      <div class="worry reveal d1"><span class="ic">✨</span><p>肌のたるみ・くすみ。内側から美しくなりたい</p></div>
+      <div class="worry reveal"><span class="ic"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span><p>慢性的な肩こり・腰痛が、なかなか良くならない</p></div>
+      <div class="worry reveal d1"><span class="ic"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><line x1="2" x2="22" y1="12" y2="12"/><line x1="12" x2="12" y1="2" y2="22"/><path d="m20 16-4-4 4-4"/><path d="m4 8 4 4-4 4"/><path d="m16 4-4 4-4-4"/><path d="m8 20 4-4 4 4"/></svg></span><p>手足の冷えやむくみ、体調のゆらぎがつらい</p></div>
+      <div class="worry reveal"><span class="ic"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 16.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 1 1 12 7.5a4.5 4.5 0 1 1 4.5 4.5 4.5 4.5 0 1 1-4.5 4.5"/><path d="M12 7.5V9"/><path d="M7.5 12H9"/><path d="M16.5 12H15"/><path d="M12 16.5V15"/><path d="m8 8 1.88 1.88"/><path d="M14.12 9.88 16 8"/><path d="m8 16 1.88-1.88"/><path d="M14.12 14.12 16 16"/></svg></span><p>生理痛・更年期・妊活など、女性特有のお悩み</p></div>
+      <div class="worry reveal d1"><span class="ic"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span><p>頭痛・めまい・不眠・自律神経の乱れが気になる</p></div>
+      <div class="worry reveal"><span class="ic"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg></span><p>病院では「異常なし」と言われたが、不調が続く</p></div>
+      <div class="worry reveal d1"><span class="ic"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg></span><p>肌のたるみ・くすみ。内側から美しくなりたい</p></div>
     </div>
     <div class="worry-after reveal">
-      <div class="arrow">▼</div>
+      <div class="arrow"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></div>
       <p>そのお悩み、<span class="serif">びわの葉っぱ</span>にご相談ください。</p>
     </div>
   </div>
@@ -567,19 +573,19 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
     <div class="reason-grid">
       <div class="reason reveal">
         <span class="num">1</span>
-        <div class="ic">👂</div>
+        <div class="ic"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0"/><path d="M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4"/></svg></div>
         <h3>耳と皮膚からの<br>やさしいアプローチ</h3>
         <p>脳・神経・皮膚のつながりに着目した「耳介画像鍼」を採用。原因のわかりにくい不調にも、体の根本から働きかけます。</p>
       </div>
       <div class="reason reveal d1">
         <span class="num">2</span>
-        <div class="ic">🤝</div>
+        <div class="ic"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg></div>
         <h3>お一人おひとりに<br>しっかり向き合う</h3>
         <p>完全予約制だから、待たされずゆったり。痛み・つらさ・お悩みをじっくり伺い、お体に合わせた施術を行います。</p>
       </div>
       <div class="reason reveal d2">
         <span class="num">3</span>
-        <div class="ic">🌿</div>
+        <div class="ic"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
         <h3>赤ちゃんから<br>お年寄りまで安心</h3>
         <p>すべて使い捨ての鍼で衛生的。女性用のお着替えもご用意。妊婦さん・お子さま・ご年配の方も安心してお越しいただけます。</p>
       </div>
@@ -596,7 +602,7 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
     </div>
     <div class="treat-grid">
       <div class="treat reveal">
-        <div class="ph"><img src="images/treatment.jpg" alt="施術風景" onerror="this.style.display='none'" loading="lazy">🪡</div>
+        <div class="ph"><img src="images/treatment.jpg" alt="施術風景" onerror="this.style.display='none'" loading="lazy"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></div>
         <div class="body">
           <span class="tag">体の不調に</span>
           <h3>はり灸治療</h3>
@@ -604,7 +610,7 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
         </div>
       </div>
       <div class="treat reveal d1">
-        <div class="ph"><img src="images/shounihari.jpg" alt="赤ちゃんへの小児はりの施術" onerror="this.style.display='none'" loading="lazy">🧸</div>
+        <div class="ph"><img src="images/shounihari.jpg" alt="赤ちゃんへの小児はりの施術" onerror="this.style.display='none'" loading="lazy"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12h.01"/><path d="M15 12h.01"/><path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><path d="M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1"/></svg></div>
         <div class="body">
           <span class="tag">お子さまに</span>
           <h3>小児はり</h3>
@@ -612,7 +618,7 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
         </div>
       </div>
       <div class="treat reveal">
-        <div class="ph"><img src="images/biyoshin.jpg" alt="美容鍼の施術" onerror="this.style.display='none'" loading="lazy">💆‍♀️</div>
+        <div class="ph"><img src="images/biyoshin.jpg" alt="美容鍼の施術" onerror="this.style.display='none'" loading="lazy"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg></div>
         <div class="body">
           <span class="tag">美容に</span>
           <h3>はり灸治療＋美容鍼</h3>
@@ -620,7 +626,7 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
         </div>
       </div>
       <div class="treat reveal d1">
-        <div class="ph"><img src="images/clinic.jpg" alt="光線療法の機器がある院内" onerror="this.style.display='none'" loading="lazy">☀️</div>
+        <div class="ph"><img src="images/clinic.jpg" alt="光線療法の機器がある院内" onerror="this.style.display='none'" loading="lazy"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></div>
         <div class="body">
           <span class="tag">体づくりに</span>
           <h3>ダイエット＋光線療法</h3>
@@ -640,19 +646,19 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
     </div>
     <div class="first-grid">
       <div class="fcard reveal">
-        <h3><span class="ic">🪶</span>鍼は痛くありません</h3>
+        <h3><span class="ic"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.67 19a2 2 0 0 0 1.416-.588l6.154-6.172a6 6 0 0 0-8.49-8.49L5.586 9.914A2 2 0 0 0 5 11.328V18a1 1 0 0 0 1 1z"/><path d="M16 8 2 22"/><path d="M17.5 15H9"/></svg></span>鍼は痛くありません</h3>
         <p>鍼は髪の毛ほどの細さ。チクッとしても蚊に刺される程度です。もし我慢できないときは、無理せずすぐにお知らせください。緊張せず、リラックスしてお受けいただけます。</p>
       </div>
       <div class="fcard reveal d1">
-        <h3><span class="ic">🌱</span>施術後の体の反応について</h3>
+        <h3><span class="ic"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg></span>施術後の体の反応について</h3>
         <p>施術後、一時的にだるさなどを感じることがあります。これは漢方で「瞑眩（めんげん）」と呼ばれ、体が良い方へ向かうサインとされています。お薬のような習慣性や副作用の心配はありません。</p>
       </div>
       <div class="fcard reveal">
-        <h3><span class="ic">📅</span>施術の回数の目安</h3>
+        <h3><span class="ic"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg></span>施術の回数の目安</h3>
         <p>発症して間もない不調ほど、早く整いやすい傾向があります。慢性的なお悩みは、気長に続けることが大切です。症状により隔日・週1回など、お体に合わせてご提案します。</p>
       </div>
       <div class="fcard reveal d1">
-        <h3><span class="ic">👗</span>持ち物・服装について</h3>
+        <h3><span class="ic"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg></span>持ち物・服装について</h3>
         <p>女性用のお着替えをご用意しています。男性の方はシャツ・短パンをお持ちください。完全予約制ですので、まずはお電話または公式LINEでご予約をお願いします。</p>
       </div>
     </div>
@@ -758,7 +764,7 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
       <h2>院長紹介</h2>
     </div>
     <div class="dir reveal">
-      <div class="photo"><img src="images/director.jpg" alt="院長 中筋弘美" onerror="this.style.display='none'" loading="lazy">👩‍⚕️</div>
+      <div class="photo"><img src="images/director.jpg" alt="院長 中筋弘美" onerror="this.style.display='none'" loading="lazy"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg></div>
       <div>
         <div class="role">院長</div>
         <div class="name">中筋 弘美 <small>（なかすじ ひろみ）</small></div>
@@ -833,7 +839,7 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
     <p class="final-lead">「こんなことで相談していいのかな」も大歓迎です。<br>あなたのつらさに、ていねいに向き合います。</p>
     <div class="cta-row">
       <a href="tel:09042616464" class="btn-tel">
-        <span class="big">📞 090-4261-6464</span>
+        <span class="big"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 090-4261-6464</span>
         <span class="lbl">タップで電話予約（受付時間内）</span>
       </a>
       <a href="https://lin.ee/TCalM2L" class="btn-line">
@@ -849,7 +855,7 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
 <footer>
   <div class="wrap ft">
     <div>
-      <b>🌿 はり灸院 びわの葉っぱ</b>
+      <b><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg> はり灸院 びわの葉っぱ</b>
       <p>〒412-0043 静岡県御殿場市新橋929-1<br>TEL：090-4261-6464／完全予約制・駐車場あり</p>
     </div>
     <div>
@@ -864,8 +870,8 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
 
 <!-- ===== 固定CTA（スマホ） ===== -->
 <div class="fixed-cta">
-  <a href="tel:09042616464" class="f-tel">📞 電話で予約<small>090-4261-6464</small></a>
-  <a href="https://lin.ee/TCalM2L" class="f-line">💬 LINEで予約<small>24時間受付中</small></a>
+  <a href="tel:09042616464" class="f-tel"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 電話で予約<small>090-4261-6464</small></a>
+  <a href="https://lin.ee/TCalM2L" class="f-line"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg> LINEで予約<small>24時間受付中</small></a>
 </div>
 
 <script>
