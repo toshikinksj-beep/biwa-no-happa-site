@@ -247,7 +247,7 @@ header.scrolled{box-shadow:0 4px 20px rgba(105,130,100,.12)}
 .cta-note{margin-top:16px;font-size:.85rem;color:var(--text-soft)}
 
 /* ---------- worries ---------- */
-#worries{background:linear-gradient(180deg,var(--green-soft),var(--cream))}
+#worries{background:var(--green-soft)}
 .worry-grid{display:grid;grid-template-columns:1fr;gap:14px;max-width:760px;margin:0 auto}
 .worry{background:var(--white);border-radius:var(--radius);padding:20px 28px;box-shadow:var(--shadow);display:flex;gap:16px;align-items:center;transition:transform .2s,box-shadow .2s}
 .worry:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
@@ -269,7 +269,7 @@ header.scrolled{box-shadow:0 4px 20px rgba(105,130,100,.12)}
 .reason p{font-size:.95rem;color:var(--text-soft)}
 
 /* ---------- treatments ---------- */
-#treatment{background:linear-gradient(180deg,var(--cream),var(--green-soft))}
+#treatment{background:var(--green-soft)}
 .treat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
 .treat{background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
 .treat:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
@@ -281,6 +281,31 @@ header.scrolled{box-shadow:0 4px 20px rgba(105,130,100,.12)}
 .treat h3{font-size:1.3rem;color:var(--brown);margin-bottom:12px}
 .treat p{font-size:.95rem;color:var(--text-soft)}
 
+
+/* ---------- section backgrounds (white / light green alternating) ---------- */
+#reasons,#symptoms,#price,#director{background:var(--white)}
+#first,#voices,#access{background:var(--green-soft)}
+#reasons .reason,#price .price-block,#director .dir{border:1px solid #e6ece1;box-shadow:0 6px 22px rgba(105,130,100,.07)}
+
+/* ---------- symptoms ---------- */
+.sym-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;align-items:start;max-width:960px;margin:0 auto}
+.sym{background:var(--white);border:1px solid #e1e9dc;border-radius:18px;overflow:hidden;transition:box-shadow .25s,border-color .25s}
+.sym[open]{border-color:var(--green);box-shadow:var(--shadow)}
+.sym summary{list-style:none;display:flex;align-items:center;gap:14px;padding:16px 20px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.sym summary::-webkit-details-marker{display:none}
+.sym summary .ic{width:44px;height:44px;border-radius:50%;background:var(--green-soft);color:var(--green-deep);display:grid;place-items:center;font-size:1.3rem;flex-shrink:0;transition:background .25s,color .25s}
+.sym[open] summary .ic{background:var(--green-deep);color:#fff}
+.sym summary .ttl{flex:1;font-weight:700;color:var(--brown);font-size:1.02rem;line-height:1.5}
+.sym summary .ttl small{display:block;font-weight:500;color:var(--text-soft);font-size:.78rem}
+.sym summary .chev{color:var(--green-deep);font-size:1.2rem;transition:transform .3s}
+.sym[open] summary .chev{transform:rotate(180deg)}
+.sym ul{list-style:none;margin:0 20px 18px;padding-top:6px;border-top:1px solid var(--green-light)}
+.sym li{position:relative;padding:11px 4px 11px 22px;font-size:.95rem;border-bottom:1px dashed #dfe6da}
+.sym li:last-child{border-bottom:none}
+.sym li::before{content:"";position:absolute;left:4px;top:50%;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:var(--green)}
+.sym-note{text-align:center;margin-top:28px;font-size:.88rem;color:var(--text-soft)}
+@media(max-width:700px){.sym-grid{grid-template-columns:1fr}}
+
 /* ---------- first time ---------- */
 .first-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:38px}
 .fcard{background:var(--white);border-radius:var(--radius);padding:28px 30px;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
@@ -288,14 +313,14 @@ header.scrolled{box-shadow:0 4px 20px rgba(105,130,100,.12)}
 .fcard h3{display:flex;align-items:center;gap:10px;font-size:1.15rem;color:var(--green-deep);margin-bottom:12px}
 .fcard h3 .ic{font-size:1.5rem}
 .fcard p{font-size:.95rem;color:var(--text-soft)}
-.yojo{background:linear-gradient(135deg,var(--cream-deep),var(--green-soft));border-radius:var(--radius);padding:32px 34px}
+.yojo{background:var(--white);border:1px solid var(--green-light);border-radius:var(--radius);padding:32px 34px}
 .yojo h3{text-align:center;color:var(--brown);font-size:1.2rem;margin-bottom:20px}
 .yojo ol{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 30px;list-style:none;counter-reset:y;max-width:760px;margin:0 auto}
 .yojo li{counter-increment:y;padding-left:38px;position:relative;font-size:.95rem}
 .yojo li::before{content:counter(y);position:absolute;left:0;top:1px;width:26px;height:26px;background:linear-gradient(135deg,var(--green),var(--green-deep));color:#fff;border-radius:50%;display:grid;place-items:center;font-size:.8rem;font-weight:700}
 
 /* ---------- pricing ---------- */
-#price{background:linear-gradient(180deg,var(--green-soft),var(--cream))}
+#price{background:var(--white)}
 .price-note{text-align:center;margin-bottom:28px}
 .price-note .first{display:inline-block;background:linear-gradient(135deg,var(--brown),var(--brown-light));color:#fff;padding:10px 26px;border-radius:30px;font-weight:700;box-shadow:var(--shadow)}
 .price-block{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:20px;overflow:hidden}
@@ -305,7 +330,7 @@ header.scrolled{box-shadow:0 4px 20px rgba(105,130,100,.12)}
 .price-block tr:last-child td{border-bottom:none}
 .price-block td.amt{text-align:right;font-weight:700;color:var(--green-deep);white-space:nowrap}
 .price-block .small{font-size:.82rem;color:var(--text-soft)}
-.pay{background:var(--cream-deep);border-radius:var(--radius);padding:24px 28px;font-size:.92rem}
+.pay{background:var(--green-soft);border-radius:var(--radius);padding:24px 28px;font-size:.92rem}
 .pay b{color:var(--brown)}
 .pay ul{margin:8px 0 0;padding-left:1.2em;color:var(--text-soft)}
 
@@ -319,7 +344,7 @@ header.scrolled{box-shadow:0 4px 20px rgba(105,130,100,.12)}
 .disclaimer{text-align:center;font-size:.8rem;color:var(--text-soft);margin-top:26px}
 
 /* ---------- director ---------- */
-#director{background:linear-gradient(180deg,var(--cream),var(--green-soft))}
+#director{background:var(--white)}
 .dir{display:grid;grid-template-columns:320px 1fr;gap:42px;align-items:center;background:var(--white);border-radius:var(--radius);padding:42px;box-shadow:var(--shadow-lg)}
 .dir .photo{position:relative;aspect-ratio:3/4;background:linear-gradient(135deg,var(--green-light),var(--green-soft));border-radius:var(--radius);overflow:hidden;display:grid;place-items:center;font-size:3rem;color:var(--green-deep)}
 .dir .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -575,6 +600,7 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
     <a href="#worries">こんなお悩みありませんか</a>
     <a href="#reasons">選ばれる理由</a>
     <a href="#treatment">施術内容</a>
+    <a href="#symptoms">対応している主な症状</a>
     <a href="#first">初めての方へ</a>
     <a href="#price">メニュー・料金</a>
     <a href="#voices">患者様の声</a>
@@ -714,6 +740,51 @@ footer .copy{text-align:center;margin-top:32px;opacity:.7;font-size:.8rem}
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ===== 4.5 対応している主な症状 ===== -->
+<section id="symptoms">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>対応している<span>主な症状</span></h2>
+      <p class="lead">肩こり・腰痛から、婦人科やお子さまのお悩み、美容まで。<br>気になる項目をタップしてご覧ください。</p>
+    </div>
+    <div class="sym-grid">
+      <details class="sym reveal">
+        <summary><span class="ic"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z"/></svg></span><span class="ttl">肩・腰・関節の痛み<small>運動器・9項目</small></span><span class="chev"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <ul><li>肩こり・首こり</li><li>腰痛・ぎっくり腰</li><li>五十肩（肩関節周囲炎）</li><li>寝違え</li><li>坐骨神経痛</li><li>膝の痛み</li><li>腱鞘炎・ばね指</li><li>むちうち（交通事故後）</li><li>スポーツによる痛み</li></ul>
+      </details>
+      <details class="sym reveal d1">
+        <summary><span class="ic"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/></svg></span><span class="ttl">頭・顔・神経の症状<small>神経系・7項目</small></span><span class="chev"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <ul><li>頭痛・偏頭痛</li><li>眼精疲労</li><li>耳鳴り・難聴</li><li>めまい</li><li>顔面神経麻痺</li><li>三叉神経痛</li><li>帯状疱疹後の痛み</li></ul>
+      </details>
+      <details class="sym reveal">
+        <summary><span class="ic"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg></span><span class="ttl">自律神経・こころ<small>自律神経系・6項目</small></span><span class="chev"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <ul><li>自律神経の乱れ</li><li>不眠・眠りが浅い</li><li>慢性的な疲れ・だるさ</li><li>ストレス・緊張</li><li>不安感・気分の落ち込み</li><li>のぼせ・ほてり</li></ul>
+      </details>
+      <details class="sym reveal d1">
+        <summary><span class="ic"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></span><span class="ttl">胃腸の不調<small>消化器系・6項目</small></span><span class="chev"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <ul><li>胃もたれ・胃痛</li><li>便秘・下痢</li><li>食欲不振</li><li>過敏性腸症候群（IBS）</li><li>逆流性食道炎</li><li>お腹の張り</li></ul>
+      </details>
+      <details class="sym reveal">
+        <summary><span class="ic"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span><span class="ttl">婦人科・妊活・産前産後<small>婦人科系・7項目</small></span><span class="chev"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <ul><li>生理痛・生理不順</li><li>PMS（月経前症候群）</li><li>更年期の不調</li><li>妊活サポート</li><li>逆子</li><li>産後の体調回復</li><li>冷え・むくみ</li></ul>
+      </details>
+      <details class="sym reveal d1">
+        <summary><span class="ic"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span><span class="ttl">呼吸器・循環器<small>呼吸器・循環器系・6項目</small></span><span class="chev"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <ul><li>花粉症・アレルギー性鼻炎</li><li>気管支ぜんそく</li><li>副鼻腔炎（蓄膿症）</li><li>血圧が気になる方（補助的に）</li><li>動悸・息切れ</li><li>手足の冷え</li></ul>
+      </details>
+      <details class="sym reveal">
+        <summary><span class="ic"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12h.01"/><path d="M15 12h.01"/><path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><path d="M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1"/></svg></span><span class="ttl">お子さまのお悩み<small>小児はり・6項目</small></span><span class="chev"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <ul><li>夜泣き・かんむし</li><li>おねしょ（夜尿症）</li><li>小児ぜんそく</li><li>アトピー性皮膚炎</li><li>食欲不振</li><li>チック</li></ul>
+      </details>
+      <details class="sym reveal d1">
+        <summary><span class="ic"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg></span><span class="ttl">美容・体づくり<small>美容鍼・ダイエット・5項目</small></span><span class="chev"><svg class="lc" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <ul><li>しわ・たるみ・ほうれい線</li><li>顔のむくみ・くすみ</li><li>しみ</li><li>ダイエット</li><li>体質改善・免疫力の維持</li></ul>
+      </details>
+    </div>
+    <p class="sym-note">※ 効果や感じ方には個人差があります。<br class="sp-br">ここにない症状も、お気軽にご相談ください。</p>
   </div>
 </section>
 
